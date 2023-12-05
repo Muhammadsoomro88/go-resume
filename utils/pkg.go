@@ -9,47 +9,49 @@ import (
 	"github.com/johnfercher/maroto/pkg/props"
 )
 
-type Resume struct {
-	Name         string        `json:"name"`
-	Position     string        `json:"position"`
-	Github       string        `json:"github"`
-	Email        string        `json:"email"`
-	LinkedIn     string        `json:"linkedin"`
-	Phone        string        `json:"phone"`
-	Location     string        `json:"location"`
-	Summary      string        `json:"summary"`
-	Job          []Experience  `json:"job"`
-	Study        []Education   `json:"study"`
-	PersonalProj []Project     `json:"personalproj"`
-	Skills       string        `json:"skills"`
-	Achievements []Achievement `json:"achievements"`
-}
+type (
+	Resume struct {
+		Name         string        `json:"name"`
+		Position     string        `json:"position"`
+		Github       string        `json:"github"`
+		Email        string        `json:"email"`
+		LinkedIn     string        `json:"linkedin"`
+		Phone        string        `json:"phone"`
+		Location     string        `json:"location"`
+		Summary      string        `json:"summary"`
+		Job          []Experience  `json:"job"`
+		Study        []Education   `json:"study"`
+		PersonalProj []Project     `json:"personalproj"`
+		Skills       string        `json:"skills"`
+		Achievements []Achievement `json:"achievements"`
+	}
 
-type Experience struct {
-	Position string `json:"position"`
-	Company  string `json:"company"`
-	Start    string `json:"start"`
-	End      string `json:"end"`
-	Summary  string `json:"summary"`
-}
+	Experience struct {
+		Position string `json:"position"`
+		Company  string `json:"company"`
+		Start    string `json:"start"`
+		End      string `json:"end"`
+		Summary  string `json:"summary"`
+	}
 
-type Education struct {
-	Program   string `json:"program"`
-	Start     string `json:"start"`
-	End       string `json:"end"`
-	Institute string `json:"institution"`
-	Summary   string `json:"summary"`
-}
+	Education struct {
+		Program   string `json:"program"`
+		Start     string `json:"start"`
+		End       string `json:"end"`
+		Institute string `json:"institution"`
+		Summary   string `json:"summary"`
+	}
 
-type Project struct {
-	Title   string `json:"title"`
-	Details string `json:"details"`
-}
+	Project struct {
+		Title   string `json:"title"`
+		Details string `json:"details"`
+	}
 
-type Achievement struct {
-	Title   string `json:"title"`
-	Details string `json:"details"`
-}
+	Achievement struct {
+		Title   string `json:"title"`
+		Details string `json:"details"`
+	}
+)
 
 func AddProjectTitle(m pdf.Maroto, title string) {
 	m.Row(4, func() {

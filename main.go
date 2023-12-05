@@ -21,7 +21,7 @@ import (
 
 func createResume(ctx *fiber.Ctx) error {
 	m := pdf.NewMaroto(consts.Portrait, consts.A4)
-	m.SetPageMargins(20, 10, 20)
+	m.SetPageMargins(10, 5, 10)
 
 	body := new(utils.Resume)
 	err := ctx.BodyParser(body)
@@ -126,14 +126,14 @@ func buildResume(m pdf.Maroto, info *utils.Resume) {
 	// experience
 	experience.AddExperience(m, info.Job)
 
-	// education
-	education.AddEducation(m, info.Study)
+	// Skill
+	skill.AddSkills(m, info.Skills)
 
 	// Personal projects
 	project.AddPersonalProject(m, info.PersonalProj)
 
-	// Skill
-	skill.AddSkills(m, info.Skills)
+	// education
+	education.AddEducation(m, info.Study)
 
 	// Achievements
 	achievements.AddAchievements(m, info.Achievements)

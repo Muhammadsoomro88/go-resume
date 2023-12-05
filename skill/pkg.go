@@ -11,7 +11,7 @@ import (
 )
 
 func AddSkills(m pdf.Maroto, skills string) {
-	m.Row(6, func() {
+	m.Row(5, func() {
 		m.Col(8, utils.AddHeading(m, "SKILLS"))
 	})
 
